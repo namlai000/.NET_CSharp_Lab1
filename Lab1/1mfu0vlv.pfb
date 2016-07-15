@@ -242,11 +242,6 @@ namespace Lab1
                 list.RemoveFirst();
                 list.AddFirst(p);
             }
-            else if (node.Equals(list.Last))
-            {
-                list.RemoveLast();
-                list.AddLast(p);
-            }
         }
 
         public void deleteProduct(Product p)
