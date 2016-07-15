@@ -10,7 +10,75 @@ namespace Lab1
     {
         static void Main(string[] args)
         {
-            
+            ProductManager manager = new ProductManager();
+            Boolean loop = true;
+
+            while (loop)
+            {
+                Console.WriteLine("1. Add new Product");
+                Console.WriteLine("2. Update product");
+                Console.WriteLine("3. Delete product");
+                Console.WriteLine("4. Search product by name");
+                Console.WriteLine("5. Search product by price range");
+                Console.WriteLine("6: Find products belong to a manufacturer");
+                Console.WriteLine("7: Display all products");
+                Console.WriteLine("8: Exit");
+                Console.Write("Enter a number: ");
+                int menu = int.Parse(Console.ReadLine());
+                switch (menu)
+                {
+                    case 1:
+                        string code;
+                        string name;
+                        double price;
+                        double quantity;
+                        string manufacturer;
+
+                        Console.Write("Enter code: ");
+                        code = Console.ReadLine();
+                        bool exist = p.findByCode(code);
+                        if (exist)
+                        {
+                            Console.WriteLine("Product exist! Try agian please");
+                        }
+                        else
+                        {
+                            Console.Write("Enter name: ");
+                            name = Console.ReadLine();
+                            Console.Write("Enter price: ");
+                            price = double.Parse(Console.ReadLine());
+                            Console.Write("Enter quantity: ");
+                            quantity = double.Parse(Console.ReadLine());
+                            Console.Write("Enter manufacturer: ");
+                            manufacturer = Console.ReadLine();
+
+                            Product p = new Product(code, name, price, quantity, manufacturer);
+                            manager.addProduct(p);
+                        }
+                        break;
+                    case 2:
+                        
+                        break;
+                    case 3:
+                        
+                        break;
+                    case 4:
+                        
+                        break;
+                    case 5:
+                        
+                        break;
+                    case 6:
+                        
+                        break;
+                    case 7:
+
+                        break;
+                    default:
+                        loop = false;
+                        break;
+                }
+            }
         }
     }
 
@@ -158,6 +226,22 @@ namespace Lab1
             }
         }
 
-        public List
+        public List<Product> findByManufacturer(String manu)
+        {
+            LinkedListNode<Product> node = list.First;
+            List<Product> l = new List<Product>();
+            while (node != null)
+            {
+                if (node.Value.manufacturer.Equals(manu)) l.Add(node.Value);
+                node = node.Next;
+            }
+
+            return l;
+        }
+
+        public void displayProduct(Product p)
+        {
+            Console.WriteLine(p.ToString());
+        }
     }
 }
