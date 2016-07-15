@@ -36,7 +36,7 @@ namespace Lab1
 
                         Console.Write("Enter code: ");
                         code = Console.ReadLine();
-                        bool exist = p.findByCode(code);
+                        bool exist = manager.findByCode(code);
                         if (exist)
                         {
                             Console.WriteLine("Product exist! Try agian please");
