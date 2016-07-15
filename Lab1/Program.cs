@@ -10,15 +10,7 @@ namespace Lab1
     {
         static void Main(string[] args)
         {
-            ProductManager p = new ProductManager();
-            p.addProduct(new Product("A1", "1", 1, 1, "A1"));
-            p.addProduct(new Product("A2", "2", 2, 2, "A2"));
-            p.addProduct(new Product("A3", "3", 3, 3, "A3"));
-            p.viewProducts();
-            Console.ReadLine();
-            p.updateProduct(new Product("A2", "6", 6, 6, "A6"));
-            p.viewProducts();
-            Console.ReadLine();
+            
         }
     }
 
