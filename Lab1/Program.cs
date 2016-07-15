@@ -75,6 +75,9 @@ namespace Lab1
             list = new LinkedList<Product>();
         }
 
-        public void addProduct(Product p);
+        public void addProduct(Product p)
+        {
+
+        }
     }
 }
