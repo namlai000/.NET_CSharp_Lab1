@@ -204,7 +204,7 @@ namespace Lab1
 
         public override string ToString()
         {
-            return string.Format("{0} - {1} - {2} - {3} - {4}", _code, _name, _price, _quantity, _manufacturer);
+            return string.Format("Code: {0} - Name: {1} - Price: {2} - Quantity: {3} - Manufacturer: {4}", _code, _name, _price, _quantity, _manufacturer);
         }
 
         public override bool Equals(object obj)
