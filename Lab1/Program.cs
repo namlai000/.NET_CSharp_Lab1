@@ -138,13 +138,17 @@ namespace Lab1
 	                    #endregion
                         break;
                     case 6:
+                        #region Search manufacturer
                         Console.Write("Enter manufacturer: ");
                         manufacturer = Console.ReadLine();
                         manager.displayByManufacturer(manufacturer);
-                        break;
+                        break; 
+                        #endregion
                     case 7:
+                        #region display all
                         manager.viewProducts();
-                        break;
+                        break; 
+                        #endregion
                     default:
                         loop = false;
                         break;
@@ -226,6 +230,7 @@ namespace Lab1
         public void addProduct(Product p)
         {
             list.AddLast(p);
+            Console.WriteLine("Added Succesfully!");
         }
 
         public void updateProduct(Product p)
@@ -300,6 +305,12 @@ namespace Lab1
         public void viewProducts()
         {
             LinkedListNode<Product> node = list.First;
+            if (node == null)
+            {
+                Console.WriteLine("List is empty!");
+                return;
+            }
+
             while (node != null)
             {
                 Console.WriteLine(node.Value.ToString());
@@ -323,7 +334,7 @@ namespace Lab1
         public void displayByManufacturer(String manu)
         {
             List<Product> l = findByManufacturer(manu);
-            if (l != null && l.Count > 0)
+            if (l.Count > 0)
             {
                 foreach (Product p in l)
                 {
